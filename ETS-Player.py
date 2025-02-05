@@ -12,6 +12,28 @@ def dibujar_circulo():
     for fila in circulo:
         print(fila)
 
+def dibujar_cuadrado():
+    cuadrado = [
+        "*******",
+        "*     *",
+        "*     *",
+        "*     *",
+        "*******"
+    ]
+    for fila in cuadrado:
+        print(fila)
+
+def dibujar_triangulo():
+    triangulo = [
+        "    *    ",
+        "   ***   ",
+        "  *****  ",
+        " ******* ",
+        "*********"
+    ]
+    for fila in triangulo:
+        print(fila)
+
 def ejecutar_comando(archivo_ets):
     # Verificar si el archivo tiene la extensión .ets
     if not archivo_ets.endswith(".ets"):
@@ -98,6 +120,16 @@ def ejecutar_comando(archivo_ets):
         elif "draw(shape)(circle)" in linea:
             print("Drawing circle:")
             dibujar_circulo()
+
+        # Procesar el comando de dibujar un cuadrado
+        elif "draw(shape)(square)" in linea:
+            print("Drawing square:")
+            dibujar_cuadrado()
+
+        # Procesar el comando de dibujar un triángulo
+        elif "draw(shape)(triangle)" in linea:
+            print("Drawing triangle:")
+            dibujar_triangulo()
 
         # Procesar asignaciones de variables
         elif "=" in linea and not "print =" in linea and not "operation(math)" in linea:
